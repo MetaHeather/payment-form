@@ -1,6 +1,32 @@
-<div>
-  <label for="inputEl">Payee Name: </label>
-  <input type="text" #inputEl (input)="onNameChange(inputEl.value)"/>
+<div class="container">
+  <h3>Payment Form</h3>
+</div>
+<!-- Payee Name -->
+<div class="row">
+  <div class="form-group col">
+    <label for="inputName">Payee Name: </label>
+    <input class="form-control" type="text" #inputName (input)="onNameChange(inputName.value)"/>
+  </div>
+
+  <div class="col">
+    <label for=""><b>Name</b></label>
+    <div>
+      {{ name | titlecase }}
+    </div>
+  </div>
 </div>
 
-{{ name }}
+<!-- Payment Date -->
+<div class="row">
+  <div class="form-group col">
+    <label for="inputDate">Payment Date: </label>
+    <input class="form-control" type="date" #inputDate (input)="onDateChange(inputDate.value)"/>
+  </div>
+
+  <div class="col">
+    <label for="formrattedDate"><b>Date</b></label>
+    <div #formattedDate>
+      {{ date | date }}
+    </div>
+  </div>
+</div>
